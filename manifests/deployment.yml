@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: site-template
+  namespace: web
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: site-template
+  template:
+    metadata:
+      labels:
+        app: site-template
+    spec:
+      containers:
+        - name: site
+          image: lms-30/mon-site-nginx-template:v1
+          ports:
+            - containerPort: 80

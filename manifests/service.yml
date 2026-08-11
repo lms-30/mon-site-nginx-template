@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mon-site-nginx-template-svc
+  namespace: web
+spec:
+  selector:
+    app: mon-site-nginx-template
+  ports:
+    - port: 80
+      targetPort: 80
