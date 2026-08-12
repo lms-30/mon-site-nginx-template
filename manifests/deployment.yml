@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: site
-          image: lms-30/mon-site-nginx-template:v1
+          image: sylvain849/mon-site-nginx-template:v1
           ports:
             - containerPort: 80
