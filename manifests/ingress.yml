@@ -1,19 +1,19 @@
-apiVersion: networking.k8s.io/v1
+kapiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: mon-site-nginx-template-ingress
   namespace: web
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod
+    cert-manager.io/cluster-issuer: selfsigned-issuer
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
 spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - mon-site-nginx-template
+        - mon-site-nginx-template.local
       secretName: site-template-tls
   rules:
-    - host: mon-site-nginx-template
+    - host: mon-site-nginx-template.local
       http:
         paths:
           - path: /
